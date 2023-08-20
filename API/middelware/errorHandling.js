@@ -1,5 +1,5 @@
-// err handeling
-function errorHandeling( err, req, res, next) {
+// err handling
+function errorHandling( err, req, res, next) {
     if (err) {
         let status = err.status || 500
         res.json({
@@ -10,4 +10,4 @@ function errorHandeling( err, req, res, next) {
     }
 }
 
-module.exports = errorHandeling;
+module.exports = errorHandling;
