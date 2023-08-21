@@ -29,6 +29,31 @@ routes.delete("/products/:id", bodyParser.json(), (req, res) => {
     products.deleteProduct(req, res);
 });
 
+// user routes
+// READ
+routes.get("/users", (req,res)=>{
+    users.fetchUsers(req,res);
+});
+routes.get("/user/id", (req,res) => {
+    users.fetchUser (req,res);
+});
+
+// CREATE
+routes.post("/user/:id", bodyParser.json(), (req,res)=> {
+    users.register(req,res);
+});
+
+//UPDATE
+routes.update("/users/:id", bodyParser.json(), (req,res)=>{
+    users.updateUser(req,res);
+});
+
+// DELETE
+routes.delete("/users/:id", bodyParser.json(), (req,res)=>{
+    users.delete(req,res)
+});
+
+
 module.exports = {
     express,
     routes
