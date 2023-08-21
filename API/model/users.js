@@ -46,9 +46,9 @@ class users{
 
       async register(req, res) {
         const data = req.body;
-        //encrypt password:ok_hand:
+        
         data.userPass = await hash(data.userPass, 15);
-        //payload .... data that comes from user
+        
         const user = {
           emailAdd: data.emailAdd,
           userPass: data.userPass,
