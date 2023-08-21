@@ -1,4 +1,4 @@
-const express = require("exress");
+const express = require("express");
 const bodyParser = require("body-parser");
 const routes = express.Router();
 
@@ -44,9 +44,9 @@ routes.post("/user/:id", bodyParser.json(), (req,res)=> {
 });
 
 //UPDATE
-routes.update("/users/:id", bodyParser.json(), (req,res)=>{
-    users.updateUser(req,res);
-});
+// routes.update("/users/:id", bodyParser.json(), (req,res)=>{
+//     users.updateUser(req,res);
+// });
 
 // DELETE
 routes.delete("/users/:id", bodyParser.json(), (req,res)=>{
