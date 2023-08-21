@@ -2,7 +2,7 @@
 const db = require("../config");
 const { hash, compare, hashSync } = require("bcrypt");
 
-class users{
+class Users{
     fetchUsers(req,res) {
         const query = 
         `SELECT userID, firstName, lastName, userAge, Gender, userRole, emailAdd, userPass, userProfile
@@ -73,4 +73,4 @@ class users{
       }
 
 }
-module.exports = users;
+module.exports = Users;
