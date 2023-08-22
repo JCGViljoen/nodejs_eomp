@@ -7,7 +7,7 @@ const { products } = require("../model");
 
 // products router
 // CREATE
-routes.post(".products", bodyParser.json(), (req,res)=> {
+routes.post("/products", bodyParser.json(), (req,res)=> {
     products.createProduct(req,res)
 });
 
@@ -29,6 +29,7 @@ routes.delete("/products/:id", bodyParser.json(), (req, res) => {
     products.deleteProduct(req, res);
 });
 
+const { users } = require("../model");
 // user routes
 // READ
 routes.get("/users", (req,res)=>{
@@ -39,9 +40,12 @@ routes.get("/user/id", (req,res) => {
 });
 
 // CREATE
-routes.post("/user/:id", bodyParser.json(), (req,res)=> {
+routes.post("/register", bodyParser.json(), (req,res)=> {
     users.register(req,res);
-});
+})
+// routes.post("/user/:id", bodyParser.json(), (req,res)=> {
+//     users.register(req,res);
+// });
 
 //UPDATE
 // routes.update("/users/:id", bodyParser.json(), (req,res)=>{

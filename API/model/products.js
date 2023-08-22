@@ -72,4 +72,4 @@ class Products{
       }
 }
 
-module.exports = Products
+module.exports = Products;
