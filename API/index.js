@@ -31,7 +31,6 @@ app.use(
 );
 
 routes.get("^/$|/challenger", (req, res) => {
-  console.log("welcome back");
   res.sendFile(path.resolve(__dirname, "./static/html/index.html"));
 });
 

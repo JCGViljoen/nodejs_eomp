@@ -18,7 +18,7 @@ class Products{
 
     fetchProduct(req, res) {
         const query = `
-            select prodID,prodName,quantity,amount, Category, prodUrl
+            SELECT prodID,prodName,quantity,amount, Category, prodUrl
             from books where prodID = ${req.params.id};`;
         db.query(query, [req.params.id], (err, result) => {
           if (err)
@@ -31,7 +31,7 @@ class Products{
 
       updateProduct(req, res) {
         const query = `
-                update products
+                UPDATE Products
                 set?
                 where prodID =?`;
         db.query(query, [req.body, req.params.id], (err) => {
@@ -59,7 +59,7 @@ class Products{
         const data = req.body
         // Query
         const query = `
-                INSERT INTO products
+                INSERT INTO Products
                 SET ?;
                 `;
         db.query(query, [data], (err) => {
