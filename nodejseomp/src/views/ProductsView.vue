@@ -1,40 +1,17 @@
 <template>
     <div class="products">
+      <h1 class="hclass">Check out our Products:</h1>
 <div>
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
+    <div class="col" v-for="item in homedecor" :key="item.prodID">
       <div class="card h-100">
-        <img src="" class="card-img-top" alt="pic">
+        <img :src='item.prodUrl' class="card-img-top" alt="pic">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <h5 class="card-title">{{ item.prodName }}</h5>
+          <p>{{ item.Category }}</p>
+          <button class="btn">Add To Cart</button>
         </div>
         <div class="card-footer">
-          <small class="text-body-secondary">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="" class="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="" class="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">Last updated 3 mins ago</small>
         </div>
       </div>
     </div>
@@ -42,4 +19,28 @@
 </div>
     </div>
   </template>
+
+<script>
+export default {
+  computed:{
+    homedecor(){
+      return this.$store.state.homedecor
+    }
+  },
+  mounted(){
+    this.$store.dispatch('fetchHomedecor')
+  }
+}
+</script>
+
+<style scoped>
+.hclass{
+  text-align: center;
+  margin-top: 1rem;
+}
+.btn{
+  background-color: #000000;
+  color: white;
+}
+</style>
   

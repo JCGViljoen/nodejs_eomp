@@ -1,6 +1,12 @@
 <template>
     <div>
+        <div>
+           
+        </div>
 
+        <div>
+            Copyright Summer De Wet &copy;
+        </div>
     </div>
 </template>
 

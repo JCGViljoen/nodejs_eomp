@@ -1,24 +1,66 @@
 <template>
-    <div class="con">
-      <div class="contact">
-        <h1 class="contactUS">Contact Us</h1>
-        <div class="mb-3 bb">
-          <label for="exampleFormControlInput1" class="form-label">First Name</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Last Name">
+    <div>
+      <form action="https://formspree.io/f/xyyaonqq" method="POST">
+        <div class="container contactForm">
+          <form class="form">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label text-black"
+                >First Name:</label
+              >
+              <input
+                type="First Name"
+                name="First Name"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Name"
+              />
+            </div>
+            <div class="mb-1">
+              <label for="exampleFormControlInput1" class="form-label text-black"
+                >Last Name:</label
+              >
+              <input
+                type="Last Name"
+                name="Last Name"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Surname
+              "
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label text-black"
+                >Email address:</label
+              >
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="name@example.com"
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="exampleFormControlTextarea1"
+                class="form-label text-black"
+                >Please leave a message:</label
+              >
+            </div>
+              <textarea
+                name="message"
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+              <div class="btns">
+                <button class="formButton mt-3 gap-3 butn1" type="submit">Send</button>
+                <button class="formButton mt-3 gap-3 butn2" type="reset">Clear</button>
+              </div>
+          </form>
         </div>
-        <div class="mb-3 bb">
-          <label for="exampleFormControlInput1" class="form-label">Last Name</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your First Name">
-        </div>
-        <div class="mb-3 bb">
-          <label for="exampleFormControlInput1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="mb-3 bb">
-          <label for="exampleFormControlTextarea1" class="form-label">Your Message:</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-      </div>
+  
+      </form>
     </div>
   </template>
   <script>
@@ -27,25 +69,21 @@
 
 <style scoped>
 
-.mb-3{
-  color: black;
-}
 
-.bb{
-  border: 0.5rem solid #469370;
-}
-
-.contact {
-  width: 50%;
-  margin-top: 2rem;
-}
-
-.contactUS{
-  text-align: center;
-}
-.con {
+.contactForm {
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  width: 70%;
 }
+
+form {
+  width: 100%;
+  border-radius: 2rem;
+  border-color: black;
+}
+
+
+
+  
 </style>
