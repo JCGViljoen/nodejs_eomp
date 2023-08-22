@@ -19,7 +19,7 @@ class Products{
     fetchProduct(req, res) {
         const query = `
             SELECT prodID,prodName,quantity,amount, Category, prodUrl
-            from books where prodID = ${req.params.id};`;
+            from Products where prodID = ${req.params.id};`;
         db.query(query, [req.params.id], (err, result) => {
           if (err)
             throw errres.json({
@@ -44,14 +44,14 @@ class Products{
       }
       deleteProduct(req, res) {
         const query = `
-                delete from products
+                delete from Products
                 where prodID =${req.params.id};
                 `;
         db.query(query, (err) => {
           if (err) throw err;
           res.json({
             status: res.statusCode,
-            msg: "The product has been updated",
+            msg: "The product has been deleted",
           });
         });
       }

@@ -20,12 +20,12 @@ routes.get("/product/:id", (req,res) => {
 });
 
 // UPDATE
-routes.patch("/products/:id", bodyParser.json(), (req,res) => {
+routes.patch("/product/:id", bodyParser.json(), (req,res) => {
     products.updateProduct(req,res);
 });
 
 // DELETE
-routes.delete("/products/:id", bodyParser.json(), (req, res) => {
+routes.delete("/product/:id", bodyParser.json(), (req, res) => {
     products.deleteProduct(req, res);
 });
 
