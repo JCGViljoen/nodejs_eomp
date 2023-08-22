@@ -6,7 +6,7 @@ const app = express();
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const errorHandling = require("./middleware/errorHandling");
-const port = +process.env.PORT || 3000;
+const port = +process.env.PORT || 3017;
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");

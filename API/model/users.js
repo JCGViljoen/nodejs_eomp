@@ -1,12 +1,13 @@
 // users
 const db = require("../config");
 const { hash, compare, hashSync } = require("bcrypt");
+const { createToken } = require("../middleware/authenticate")
 
 class Users{
     fetchUsers(req,res) {
         const query = 
         `SELECT userID, firstName, lastName, userAge, Gender, userRole, emailAdd, userPass, userProfile
-        FROM users; 
+        FROM Users; 
         `
         db.query(query, (err, results)=>{
             if (err) throw err;
@@ -19,7 +20,7 @@ class Users{
 
     updateUser(req,res) {
         const query = `
-        update users set?
+        update Users set?
         where userID;
         `
         db.query(query, (err) => {
@@ -32,7 +33,7 @@ class Users{
     }
     deleteUser(req, res) {
         const query = `
-                delete from users
+                delete from Users
                 where userID =${req.params.id};
                 `;
         db.query(query, (err) => {
@@ -55,7 +56,7 @@ class Users{
         };
         //query
         const query = `
-            insert into users
+            insert into Users
             set ?;
             `;
         db.query(query, [data], (err) => {
