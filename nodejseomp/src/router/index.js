@@ -4,6 +4,7 @@ import AboutView from '../views/AboutView.vue'
 import AdminView from '../views/AdminView.vue'
 import ProductsView from '../views/ProductsView.vue'
 import ContactView from '../views/ContactView.vue'
+import Single from '../views/SingleView.vue'
 
 const routes = [
   {
@@ -30,6 +31,12 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: ContactView
+  },
+
+  {
+    path: '/single',
+    name: 'single',
+    component: Single
   }
 
 ]

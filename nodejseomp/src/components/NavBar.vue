@@ -14,13 +14,13 @@
             <router-link class="head" to="/about">About Us</router-link>
           </li>
           <li>
-            <router-link class="head" to="/admin">Admin</router-link>
-          </li>
-          <li>
             <router-link class="head" to="/products">Products</router-link>
           </li>
           <li>
-            <router-link class="head" to="/contact">Contact</router-link>
+            <router-link class="head" to="/admin">Admin</router-link>
+          </li>
+          <li>
+            <router-link class="head" to="/contact">Contact Us</router-link>
           </li>
         </ul>
         <form class="d-flex" role="search">
