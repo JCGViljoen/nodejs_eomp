@@ -19,10 +19,10 @@ class Products{
     fetchProduct(req, res) {
         const query = `
             SELECT prodID,prodName,quantity,amount, Category, prodUrl
-            from books where prodID = ${req.params.id};`;
+            from Products WHERE prodID = ${req.params.id};`;
         db.query(query, [req.params.id], (err, result) => {
           if (err)
-            throw errres.json({
+            throw err.json({
               status: res.statusCode,
               result,
             });
@@ -32,7 +32,7 @@ class Products{
       updateProduct(req, res) {
         const query = `
                 UPDATE Products
-                set?
+                set ?
                 where prodID =?`;
         db.query(query, [req.body, req.params.id], (err) => {
           if (err) throw err;
@@ -44,14 +44,14 @@ class Products{
       }
       deleteProduct(req, res) {
         const query = `
-                delete from products
+                delete from Products
                 where prodID =${req.params.id};
                 `;
         db.query(query, (err) => {
           if (err) throw err;
           res.json({
             status: res.statusCode,
-            msg: "The product has been updated",
+            msg: "The product has been deleted",
           });
         });
       }
@@ -61,7 +61,7 @@ class Products{
         const query = `
                 INSERT INTO Products
                 SET ?;
-                `;
+                `
         db.query(query, [data], (err) => {
           if (err) throw err;
           res.json({

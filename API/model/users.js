@@ -33,8 +33,8 @@ class Users{
     }
     deleteUser(req, res) {
         const query = `
-                delete from Users
-                where userID =${req.params.id};
+                DELETE from Users
+                WHERE userID =${req.params.id};
                 `;
         db.query(query, (err) => {
           if (err) throw err;
