@@ -19,10 +19,10 @@ class Products{
     fetchProduct(req, res) {
         const query = `
             SELECT prodID,prodName,quantity,amount, Category, prodUrl
-            from Products where prodID = ${req.params.id};`;
+            from Products WHERE prodID = ${req.params.id};`;
         db.query(query, [req.params.id], (err, result) => {
           if (err)
-            throw errres.json({
+            throw err.json({
               status: res.statusCode,
               result,
             });
@@ -32,7 +32,7 @@ class Products{
       updateProduct(req, res) {
         const query = `
                 UPDATE Products
-                set?
+                set ?
                 where prodID =?`;
         db.query(query, [req.body, req.params.id], (err) => {
           if (err) throw err;
@@ -61,7 +61,7 @@ class Products{
         const query = `
                 INSERT INTO Products
                 SET ?;
-                `;
+                `
         db.query(query, [data], (err) => {
           if (err) throw err;
           res.json({

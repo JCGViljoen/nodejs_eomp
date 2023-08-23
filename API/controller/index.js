@@ -7,8 +7,8 @@ const { products } = require("../model");
 
 // products router
 // CREATE
-routes.post("/products", bodyParser.json(), (req,res)=> {
-    products.createProduct(req,res)
+routes.post("/product", bodyParser.json(), (req,res)=> {
+    products.registerProduct(req,res);
 });
 
 // READ 
