@@ -11,7 +11,7 @@
         <span> R{{ $route.query.amount }}</span>
       </p>
       <div class="card-footer text-body-secondary">
-        <router-link to="/products" class="btn btn-primary">Back</router-link>
+        <router-link to="/products" class="btn">⬅️Back</router-link>
         <br /><br />
         </div>
       </div>
@@ -27,5 +27,8 @@
 </script>
 
 <style scoped>
-
+.btn{
+  background-color: black;
+  color: white;
+}
 </style>

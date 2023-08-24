@@ -3,7 +3,7 @@
     
         <h1 class="h1two">Admin Interface💻</h1>
       
-      <div class="table-responsive" style="margin-top: 1rem">
+      <div class="table-responsive" style="margin-top: 1rem" v-if="users">
           <table class="table">
             <thead>
               <tr>
@@ -25,6 +25,9 @@
                 <td>{{ item.amount }}</td>
                 <td>{{ item.Category }}</td>
                 <td><img :src="item.prodUrl" :alt="item.prodName" style="width: 5rem"></td>
+                
+          <td><button @click="editProduct(item)" class="btn btn-dark" data-bs-toggle="" data-bs-target="#exampleModal" data-bs-whatever="">Edit</button></td>
+          <td><button @click="deleteProduct(item.prodID)" class="btn btn-dark" data-bs-toggle="" data-bs-target="#exampleModal" data-bs-whatever="">Delete</button></td>
               </tr>
 
             </tbody>
@@ -41,7 +44,6 @@
                   <th scope="col">Gender</th>
                   <th scope="col">userRole</th>
                   <th scope="col">emailAdd</th>
-                  <th scope="col">userPass</th>
                   <th scope="col">userProfile</th>
                   <th scope="col">Edit</th>
                   <th scope="col">Delete</th>
@@ -56,20 +58,38 @@
                   <td>{{ item.Gender }}</td>
                   <td>{{ item.userRole }}</td>
                   <td>{{ item.emailAdd }}</td>
-                  <td>{{ item.userPass }}</td>
                   <td><img :src="item.userProfile" :alt="item.firstName" style="width: 5rem"></td>
-                  <td></td>
-                  <td></td>
+                  <td><button  class="btn btn-dark" data-bs-toggle="" data-bs-target="#exampleModal" data-bs-whatever="">Edit</button></td>
+                  <td><button  type="button" class="btn btn-dark" data-bs-toggle="" data-bs-target="#exampleModal" data-bs-whatever="">Delete</button></td>
                 </tr>
               </tbody>
             </table>
     </div>
     </div>
+    <div class="else" v-else>
+      <Spinner/>
+    </div>
     </div>
   </template>
 
   <script>
+  import Spinner from "@/components/SpinnerComponent.vue"
+  // import axios from "axios"
   export default {
+    components:{
+      Spinner
+    },
+    methods: {
+      async editProduct(product){
+
+      },
+      async deleteProduct(prodID){
+        this.$store.dispatch('delFunction', prodID)
+      },
+      // async deleteUser(userID){
+      //   this.$store.dispatch('delFunction', userID)
+      // }
+    },
     computed:{
       homedecor(){
         return this.$store.state.homedecor

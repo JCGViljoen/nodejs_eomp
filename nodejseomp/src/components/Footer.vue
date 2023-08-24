@@ -4,8 +4,8 @@
            
         </div>
 
-        <div>
-            Copyright Summer De Wet &copy;
+        <div class="copyright">
+            Copyright HomeSpace&copy; 2023
         </div>
     </div>
 </template>
@@ -17,5 +17,7 @@
 </script>
 
 <style scoped>
-
+.copyright{
+   text-align: center;
+}
 </style>

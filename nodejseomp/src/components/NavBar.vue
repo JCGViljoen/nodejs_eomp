@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg">
+  <nav  class="navbar navbar-expand-lg"  type="text" placeholder="Search...">
     <div class="container-fluid">
       <a class="navbar-brand" id="navpic" href="#">HOMESPACE</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <button class="btn" type="submit">Search</button>
         </form>
       </div>
     </div>
@@ -38,6 +38,10 @@
 <style scoped>
 .navbar{
   background-color: #d4a373;
+}
+.btn{
+  outline-color: black;
+  background-color: white;
 }
 .head{
   color: white;
