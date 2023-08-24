@@ -43,18 +43,16 @@ routes.get("/user/id", (req,res) => {
 routes.post("/register", bodyParser.json(), (req,res)=> {
     users.register(req,res);
 })
-// routes.post("/user/:id", bodyParser.json(), (req,res)=> {
-//     users.register(req,res);
-// });
+
 
 //UPDATE
-// routes.update("/users/:id", bodyParser.json(), (req,res)=>{
-//     users.updateUser(req,res);
-// });
+routes.patch("/user/:id", bodyParser.json(), (req,res)=>{
+    users.updateUser(req,res);
+});
 
 // DELETE
-routes.delete("/users/:id", bodyParser.json(), (req,res)=>{
-    users.delete(req,res)
+routes.delete("/user/:id", bodyParser.json(), (req,res)=>{
+    users.deleteUser(req,res)
 });
 
 
