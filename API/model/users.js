@@ -20,8 +20,8 @@ class Users{
 
     updateUser(req,res) {
         const query = `
-        update Users set?
-        where userID;
+        UPDATE Users set?
+        where userID = ${req.params.id};
         `
         db.query(query, (err) => {
           if (err) throw err;
@@ -30,20 +30,22 @@ class Users{
             msg: "The user has been updated 👌",
           });
         });
-    }
+    };
     deleteUser(req, res) {
         const query = `
-                DELETE from Users
-                WHERE userID =${req.params.id};
+                DELETE FROM Users
+                WHERE userID = ${req.params.id};
                 `;
         db.query(query, (err) => {
           if (err) throw err;
           res.json({
             status: res.statusCode,
-            msg: "The user has been updated",
+            msg: "The user has been deleted",
           });
         });
       }
+
+      
 
       async register(req, res) {
         const data = req.body;
