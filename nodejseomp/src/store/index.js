@@ -21,7 +21,7 @@ export default createStore({
     },
     setDeleteProd(state, data){
       state.homedecor = data
-    },
+    }
 
     
 // data() {
