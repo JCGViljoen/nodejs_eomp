@@ -32,6 +32,7 @@
       </table>
     </div>
 
+    <button><AddUser/></button>
     <div class="table-responsive" v-if="users">
       <h1 class="h1two">Users👤</h1>
       <table class="table">
@@ -75,11 +76,13 @@
 <script>
 import Spinner from "@/components/SpinnerComponent.vue";
 import AddProduct from '@/components/AddProduct.vue';
+import AddUser from "@/components/AddUser.vue";
 
 export default {
   components: {
     Spinner,
-    AddProduct
+    AddProduct,
+    AddUser
   },
   methods: {
     async editProduct(product) {
