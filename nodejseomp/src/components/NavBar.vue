@@ -36,6 +36,7 @@
   }
 </script>
 <style scoped>
+
 .navbar{
   background-color: #d4a373;
 }

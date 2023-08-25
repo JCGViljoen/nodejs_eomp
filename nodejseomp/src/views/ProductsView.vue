@@ -54,6 +54,7 @@ export default {
 };
 </script>
 <style scoped>
+
 .hclass {
   text-align: center;
   margin-top: 1rem;
