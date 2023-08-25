@@ -3,8 +3,6 @@ import axios from 'axios'
 
 const url = 'https://nodejs-eomp-1fgg.onrender.com/'
 
-
-
 export default createStore({
   state: {
     homedecor: null,
@@ -13,46 +11,39 @@ export default createStore({
   getters: {
   },
   mutations: {
-    setHomedecor(state, data){
+    setHomedecor(state, data) {
       state.homedecor = data
     },
-    setUsers(state, users){
+    setUsers(state, users) {
       state.users = users
     },
-    setDeleteProd(state, data){
+    setDeleteProd(state, data) {
       state.homedecor = data
-    }
-
-    
-// data() {
-//   return {
-//     searchQuery: '', 
-//   };
-// }
-    // setDeleteUser(state, data){
-    //   state.users = data
-    // }
+    },
+    setDeleteUser(state, data) {
+      state.users = data
+    },
   },
   actions: {
-    async fetchHomedecor({commit}){
+    async fetchHomedecor({ commit }) {
       const fetchedData = await axios.get(`${url}products`)
-      commit(`setHomedecor`,fetchedData.data.results)
+      commit('setHomedecor', fetchedData.data.results)
     },
-    async fetchUsers({commit}){
-      const fetchedData = await axios.get( `${url}users`)
-      commit(`setUsers`,fetchedData.data.results)
+    async fetchUsers({ commit }) {
+      const fetchedData = await axios.get(`${url}users`)
+      commit('setUsers', fetchedData.data.results)
     },
-    async delFunction({commit}, prodID){
+    async deleteProduct({ commit }, prodID) { // Changed action name
       const response = await axios.delete(`${url}product/${prodID}`)
       location.reload()
       commit('setDeleteProd', response)
+    },
+    async deleteUser({ commit }, userID) { // Changed action name
+      const response = await axios.delete(`${url}user/${userID}`)
+      location.reload()
+      commit('setDeleteUser', response)
     }
-    // async delFunction({commit}, userID){
-    //   const response = await axios.delete(`${url}user/${userID}`)
-    //   location.reload()
-    //   commit('setDeleteUser', response)
-    // }
-},
+  },
   modules: {
   }
 })
