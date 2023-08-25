@@ -8,6 +8,7 @@ export default createStore({
     homedecor: null,
     users: null,
     addProduct: null,
+    addUser: null
   },
   getters: {
   },
@@ -26,6 +27,9 @@ export default createStore({
     },
     setAddProduct(state, data) {
       state.addProduct = data
+    },
+    setAddUser(state, data) {
+      state.addUser = data
     },
   },
   actions: {
@@ -51,6 +55,11 @@ export default createStore({
       const response = await axios.post(`${url}product`, productdata)
       location.reload()
       context.commit('setAddProduct', response.data)
+    },
+    async addUser(context, userdata) {
+      const response = await axios.post(`${url}register`, userdata)
+      location.reload()
+      context.commit('setAddUser', response.data)
     }
   },
   modules: {
