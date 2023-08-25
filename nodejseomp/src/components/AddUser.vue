@@ -58,5 +58,9 @@
 </script>
 
 <style scoped>
-
+.btn{
+    background-color: black;
+    color: white;
+    border-radius: 1px;
+}
 </style>
