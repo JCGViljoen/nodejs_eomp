@@ -3,6 +3,7 @@
     <h1 class="h1two">Admin Interface💻</h1>
     <div class="table-responsive" style="margin-top: 1rem" v-if="homedecor">
       <h1 class="h1two">Home Decor Products🛋️</h1>
+      <button class="addbtn"><AddProduct/></button>
       <table class="table">
         <thead>
           <tr>
@@ -73,10 +74,12 @@
 
 <script>
 import Spinner from "@/components/SpinnerComponent.vue";
+import AddProduct from '@/components/AddProduct.vue';
 
 export default {
   components: {
     Spinner,
+    AddProduct
   },
   methods: {
     async editProduct(product) {

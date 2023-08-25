@@ -18,11 +18,6 @@
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Righteous&display=swap');
-*{
-font-family: 'Merriweather', serif;
-font-family: 'Righteous', cursive;
-}
 
 .body{
   position: absolute;

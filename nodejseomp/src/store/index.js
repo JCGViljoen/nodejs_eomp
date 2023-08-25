@@ -6,7 +6,8 @@ const url = 'https://nodejs-eomp-1fgg.onrender.com/'
 export default createStore({
   state: {
     homedecor: null,
-    users: null
+    users: null,
+    addProduct: null,
   },
   getters: {
   },
@@ -23,6 +24,9 @@ export default createStore({
     setDeleteUser(state, data) {
       state.users = data
     },
+    setAddProduct(state, data) {
+      state.addProduct = data
+    },
   },
   actions: {
     async fetchHomedecor({ commit }) {
@@ -33,15 +37,20 @@ export default createStore({
       const fetchedData = await axios.get(`${url}users`)
       commit('setUsers', fetchedData.data.results)
     },
-    async deleteProduct({ commit }, prodID) { // Changed action name
+    async deleteProduct({ commit }, prodID) { 
       const response = await axios.delete(`${url}product/${prodID}`)
       location.reload()
       commit('setDeleteProd', response)
     },
-    async deleteUser({ commit }, userID) { // Changed action name
+    async deleteUser({ commit }, userID) { 
       const response = await axios.delete(`${url}user/${userID}`)
       location.reload()
       commit('setDeleteUser', response)
+    },
+    async addProduct(context, productdata) {
+      const response = await axios.post(`${url}product`, productdata)
+      location.reload()
+      context.commit('setAddProduct', response.data)
     }
   },
   modules: {
